@@ -1,0 +1,548 @@
+:root {
+  font-family: Quicksand, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-image: url("images/fondo.webp");
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 32px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 20px;
+  text-align: center;
+}
+
+.titlep {
+  margin-top: -10px;
+  margin-bottom: -5px;
+  font-size: 20px;
+  text-align: center;
+  padding-left: 100px;
+  padding-right: -80px;
+}
+
+.subtitle {
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 20px;
+  background-color: white;
+  border-radius: 15px;
+  width: min(400px, 100%);
+}
+
+.names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  gap: 20px;
+  background-color: white;
+  border-radius: 15px;
+  width: min(400px, 100%);
+}
+
+.container:not(.container--visible) {
+  display: none;
+}
+
+.logo {
+  display: grid;
+  background-image: url("images/logo.webp");
+  position: relative;
+  width: 230px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 1rem;
+}
+
+.content-top {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.drawn-numbers-container {
+  display: grid;
+  grid-template-columns: repeat(7, 40px);
+  width: min(350px, 100%);
+  gap: 10px;
+  padding: 20px;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.drawn-numbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  color: #730c02;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  border: 2px solid black;
+}
+
+.content-bottom {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  justify-content: center;
+}
+
+.icon-button {
+  display: flex;
+  padding: 10px;
+  background-color: #a61103;
+  border-radius: 100%;
+  fill: white;
+}
+
+.accions-button {
+  padding: 10px 24px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #a61103;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.input,
+.button,
+.accions-button,
+.icon-button {
+  font: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 16px;
+  text-align: center;
+  border: 2px solid #a61103;
+  border-radius: 4px;
+}
+
+.input::placeholder {
+  font-weight: bold;
+  color: #a61103;
+}
+
+.input:focus::placeholder {
+  visibility: hidden;
+}
+
+.button {
+  padding: 16px 24px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #a61103;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button:hover,
+.button:focus,
+.accions-button:hover,
+.accions-button:focus,
+.icon-button:hover,
+.icon-button:focus {
+  background-color: #d94e41;
+}
+
+.button:disabled,
+.accions-button:disabled {
+  background-color: #730c02;
+  cursor: not-allowed;
+}
+
+.input:focus {
+  border-color: #d94e41;
+}
+
+.grid-container {
+  gap: 0px;
+  margin-top: 10px;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  border-radius: 15px;
+  background-color: rgb(241, 149, 149);
+  border: 2px solid black;
+  /* border: none;*/
+}
+
+.grid-cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #730c02;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.grid-marked-cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.column-header {
+  font: inherit;
+  color: white;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #730c02;
+  font-weight: bold;
+}
+
+.players {
+  display: grid;
+  flex-direction: column;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  gap: 10px 40px;
+}
+
+.players .card {
+  width: 100px;
+  height: 100px;
+}
+.card {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.players .pnames {
+  text-align: center;
+  font-weight: bold;
+}
+
+.lottery-number {
+  display: grid;
+  padding: 10px;
+  gap: 20px;
+  border-radius: 15px;
+  width: min(200px, 100%);
+  height: min(200px, 100%);
+  background-color: maroon;
+  border: 2px solid maroon;
+  place-items: center;
+}
+
+.lottery-lack-number {
+  display: grid;
+  padding: 10px;
+  gap: 15px;
+  border-radius: 15px;
+  width: min(200px, 100%);
+  height: min(200px, 100%);
+  border: 2px solid black;
+  place-items: center;
+}
+
+.lottery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px;
+  gap: 40px;
+  align-items: center;
+}
+
+.subtitles {
+  font-size: 18px;
+  text-align: center;
+  flex: 1;
+  padding: 10px;
+}
+
+.subtitlesh {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  flex: 1;
+  padding: 10px;
+}
+
+.number {
+  font-weight: bold;
+  color: white;
+  font-size: 40px;
+}
+
+.lack {
+  font-weight: bold;
+  color: black;
+  font-size: 40px;
+}
+
+.lottery-lack {
+  display: flex;
+  flex-direction: row;
+  padding: 24px;
+  gap: 20px;
+}
+
+.score {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: min(350px, 100%);
+  gap: 20px;
+  align-items: center;
+  /*  border: 2px solid black; */
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.points {
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  gap: 20;
+  margin-top: -10px;
+  margin-bottom: -5px;
+  flex: 1;
+}
+
+.pointsp {
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  gap: 20;
+  margin-top: -10px;
+  margin-bottom: -5px;
+  flex: 1;
+  padding-right: 100px;
+}
+
+.table {
+  border-radius: 4px;
+  overflow: hidden;
+  border-spacing: 0;
+}
+
+.row {
+  display: flex;
+  padding: 8px;
+  gap: 16px;
+  font-size: 16px;
+}
+
+.ranking {
+  flex-basis: 2ch;
+}
+
+.player {
+  flex-grow: 1;
+}
+
+.row:nth-child(2n + 1) {
+  background-color: rgb(241, 149, 149);
+}
+
+.row.row-player {
+  font-weight: bold;
+  color: white;
+  background-color: #730c02;
+}
+
+/* Parte que es responsive */
+@media (max-width: 480px), (max-height: 600px) {
+  .drawn-numbers-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .drawn-numbers {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+
+  .subtitle {
+    font-size: 24px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .container,
+  .names {
+    padding: 8px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 80px;
+    margin: auto;
+  }
+
+  .drawn-numbers-container {
+    padding: 8px;
+  }
+
+  .drawn-numbers {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+  }
+
+  .content-bottom {
+    padding: 8px;
+  }
+
+  .icon-button {
+    padding: 8px;
+  }
+
+  .accions-button {
+    padding: 8px 12px;
+  }
+
+  .input {
+    padding: 8px;
+  }
+
+  .button {
+    padding: 8px 12px;
+  }
+
+  .grid-container {
+    padding: 8px;
+  }
+
+  .grid-cell,
+  .grid-marked-cell,
+  .column-header {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .players .card {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card {
+    width: 40px;
+    height: 40px;
+  }
+
+  .lottery-number,
+  .lottery-lack-number {
+    padding: 8px;
+  }
+
+  .lottery {
+    gap: 16px;
+  }
+
+  .subtitles {
+    font-size: 12px;
+  }
+
+  .subtitlesh {
+    font-size: 12px;
+  }
+
+  .number,
+  .lack {
+    font-size: 20px;
+  }
+
+  .lottery-lack {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .score {
+    gap: 8px;
+  }
+
+  .points {
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .pointsp {
+    font-size: 18px;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: -5px;
+    padding-right: 100px;
+    margin-left: 5px;
+  }
+
+  .titlep {
+    margin-top: -10px;
+    margin-bottom: -5px;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 5px;
+    padding-left: 100px;
+  }
+}

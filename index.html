@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bingo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="home" class="container">
+      <div class="actions">
+        <button class="icon-button info-button" aria-label="informacion">
+          <svg width="24" height="24" viewBox="0 0 19 19">
+            <path
+              d="M18.125,15.80l-4.0-4.037c0.675-1.079,1.012-2.308,1.01-3.534C15.089,4.62,12.199,1.75,8.584,1.75C4.815,1.75,1.982,4.726,2,8.286c0.021,3.577,2.908,6.549,6.578,6.549c1.241,0,2.417-0.347,3.44-0.985l4.032,4.026c0.167,0.166,0.43,0.166,0.596,0l1.479-1.478C18.292,16.234,18.292,15.968,18.125,15.804 M8.578,13.99c-3.198,0-5.716-2.593-5.733-5.71c-0.017-3.084,2.438-5.686,5.74-5.686c3.197,0,5.625,2.493,5.64,5.624C14.242,11.548,11.621,13.99,8.578,13.99 M16.349,16.981l-3.637-3.635c0.131-0.11,0.721-0.695,0.876-0.884l3.642,3.639L16.349,16.981z"
+            ></path>
+          </svg>
+        </button>
+        <button class="icon-button score-button" aria-label="puntuaciones">
+          <svg width="24" height="24" viewBox="0 0 19 19">
+            <path
+              d="M17.684,7.925l-5.131-0.67L10.329,2.57c-0.131-0.275-0.527-0.275-0.658,0L7.447,7.255l-5.131,0.67C2.014,7.964,1.892,8.333,2.113,8.54l3.76,3.568L4.924,17.21c-0.056,0.297,0.261,0.525,0.533,0.379L10,15.109l4.543,2.479c0.273,0.153,0.587-0.089,0.533-0.379l-0.949-5.103l3.76-3.568C18.108,8.333,17.986,7.964,17.684,7.925 M13.481,11.723c-0.089,0.083-0.129,0.205-0.105,0.324l0.848,4.547l-4.047-2.208c-0.055-0.03-0.116-0.045-0.176-0.045s-0.122,0.015-0.176,0.045l-4.047,2.208l0.847-4.547c0.023-0.119-0.016-0.241-0.105-0.324L3.162,8.54L7.74,7.941c0.124-0.016,0.229-0.093,0.282-0.203L10,3.568l1.978,4.17c0.053,0.11,0.158,0.187,0.282,0.203l4.578,0.598L13.481,11.723z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div class="content">
+        <div class="logo"></div>
+        <input
+          id="tamaño"
+          class="input"
+          placeholder="Tamaño del cartón"
+          aria-label="Tamaño de los cartones"
+        />
+        <button class="button continue-button" disabled>Continuar</button>
+      </div>
+    </div>
+    <div id="name" class="container">
+      <div class="actions">
+        <button class="icon-button back-button" aria-label="regresar">
+          <svg width="24" height="24" viewBox="0 0 19 19">
+            <path
+              d="M18.271,9.212H3.615l4.184-4.184c0.306-0.306,0.306-0.801,0-1.107c-0.306-0.306-0.801-0.306-1.107,0
+              L1.21,9.403C1.194,9.417,1.174,9.421,1.158,9.437c-0.181,0.181-0.242,0.425-0.209,0.66c0.005,0.038,0.012,0.071,0.022,0.109
+              c0.028,0.098,0.075,0.188,0.142,0.271c0.021,0.026,0.021,0.061,0.045,0.085c0.015,0.016,0.034,0.02,0.05,0.033l5.484,5.483
+              c0.306,0.307,0.801,0.307,1.107,0c0.306-0.305,0.306-0.801,0-1.105l-4.184-4.185h14.656c0.436,0,0.788-0.353,0.788-0.788
+              S18.707,9.212,18.271,9.212z"
+            ></path>
+          </svg>
+        </button>
+        <div class="title">Escriba el nombre de los jugadores</div>
+        <div
+          class="icon-button"
+          style="visibility: hidden"
+          aria-hidden="true"
+        ></div>
+      </div>
+      <div class="content">
+        <input
+          id="player1"
+          class="input"
+          placeholder="Jugador 1"
+          aria-label="nombre jugador 1"
+        />
+        <input
+          id="player2"
+          class="input"
+          placeholder="Jugador 2"
+          aria-label="nombre jugador 2"
+        />
+        <input
+          id="player3"
+          class="input"
+          placeholder="Jugador 3"
+          aria-label="nombre jugador 3"
+        />
+        <input
+          id="player4"
+          class="input"
+          placeholder="Jugador 4"
+          aria-label="nombre jugador 4"
+        />
+        <button class="button start-button" disabled>Comenzar juego</button>
+      </div>
+    </div>
+    <div id="info" class="container">
+      <div class="actions">
+        <button class="icon-button back-button" aria-label="regresar">
+          <svg width="24" height="24" viewBox="0 0 19 19">
+            <path
+              d="M18.271,9.212H3.615l4.184-4.184c0.306-0.306,0.306-0.801,0-1.107c-0.306-0.306-0.801-0.306-1.107,0
+              L1.21,9.403C1.194,9.417,1.174,9.421,1.158,9.437c-0.181,0.181-0.242,0.425-0.209,0.66c0.005,0.038,0.012,0.071,0.022,0.109
+              c0.028,0.098,0.075,0.188,0.142,0.271c0.021,0.026,0.021,0.061,0.045,0.085c0.015,0.016,0.034,0.02,0.05,0.033l5.484,5.483
+              c0.306,0.307,0.801,0.307,1.107,0c0.306-0.305,0.306-0.801,0-1.105l-4.184-4.185h14.656c0.436,0,0.788-0.353,0.788-0.788
+              S18.707,9.212,18.271,9.212z"
+            />
+          </svg>
+        </button>
+        <div class="title">Información</div>
+        <div
+          class="icon-button"
+          style="visibility: hidden"
+          aria-hidden="true"
+        ></div>
+      </div>
+      <div class="content">
+        <div class="information">
+          <div class="subtitlesh">MicroProyecto 1 - Bingo:</div>
+          <div class="subtitles">Daniel Fiallo</div>
+        </div>
+      </div>
+    </div>
+    <div id="scoreTable-info" class="container">
+      <div class="actions">
+        <button class="icon-button back-button" aria-label="regresar">
+          <svg width="24" height="24" viewBox="0 0 19 19">
+            <path
+              d="M18.271,9.212H3.615l4.184-4.184c0.306-0.306,0.306-0.801,0-1.107c-0.306-0.306-0.801-0.306-1.107,0
+              L1.21,9.403C1.194,9.417,1.174,9.421,1.158,9.437c-0.181,0.181-0.242,0.425-0.209,0.66c0.005,0.038,0.012,0.071,0.022,0.109
+              c0.028,0.098,0.075,0.188,0.142,0.271c0.021,0.026,0.021,0.061,0.045,0.085c0.015,0.016,0.034,0.02,0.05,0.033l5.484,5.483
+              c0.306,0.307,0.801,0.307,1.107,0c0.306-0.305,0.306-0.801,0-1.105l-4.184-4.185h14.656c0.436,0,0.788-0.353,0.788-0.788
+              S18.707,9.212,18.271,9.212z"
+            />
+          </svg>
+        </button>
+        <div class="title"></div>
+        <button class="icon-button delete-button" aria-label="borrar registros">
+          <svg width="24" height="24" viewBox="0 0 19 19">
+            <path
+              d="M7.083,8.25H5.917v7h1.167V8.25z M18.75,3h-5.834V1.25c0-0.323-0.262-0.583-0.582-0.583H7.667
+              c-0.322,0-0.583,0.261-0.583,0.583V3H1.25C0.928,3,0.667,3.261,0.667,3.583c0,0.323,0.261,0.583,0.583,0.583h1.167v14
+              c0,0.644,0.522,1.166,1.167,1.166h12.833c0.645,0,1.168-0.522,1.168-1.166v-14h1.166c0.322,0,0.584-0.261,0.584-0.583
+              C19.334,3.261,19.072,3,18.75,3z M8.25,1.833h3.5V3h-3.5V1.833z M16.416,17.584c0,0.322-0.262,0.583-0.582,0.583H4.167
+              c-0.322,0-0.583-0.261-0.583-0.583V4.167h12.833V17.584z M14.084,8.25h-1.168v7h1.168V8.25z M10.583,7.083H9.417v8.167h1.167V7.083
+              z"
+            />
+          </svg>
+        </button>
+      </div>
+      <table id="scores" class="table"></table>
+    </div>
+    <div id="players" class="container">
+      <div class="actions">
+        <button class="accions-button homb">Volver al inicio</button>
+      </div>
+      <div class="content">
+        <div class="title">
+          Seleccione a uno de los jugadores para ver su cartón:
+        </div>
+        <div class="players">
+          <div
+            id="player-logo-1"
+            class="card"
+            style="background-image: url('images/player1.webp')"
+          ></div>
+          <div
+            id="player-logo-2"
+            class="card"
+            style="background-image: url('images/player2.webp')"
+          ></div>
+          <strong id="player-name-1" class="pnames"></strong>
+          <strong id="player-name-2" class="pnames"></strong>
+          <p></p>
+          <p></p>
+          <div
+            id="player-logo-3"
+            class="card"
+            style="background-image: url('images/player3.webp')"
+          ></div>
+          <div
+            id="player-logo-4"
+            class="card"
+            style="background-image: url('images/player4.webp')"
+          ></div>
+          <strong id="player-name-3" class="pnames"></strong>
+          <strong id="player-name-4" class="pnames"></strong>
+        </div>
+        <div class="subtitle">Sorteo</div>
+        <div class="lottery">
+          <div class="lottery-number">
+            <div id="numero" class="number"></div>
+          </div>
+          <div class="actions">
+            <button id="startDraw" class="accions-button ball">
+              Empezar sorteo
+            </button>
+          </div>
+          <div class="lottery-lack-number">
+            <div id="lack" class="lack"></div>
+          </div>
+          <div>
+            <div class="subtitles">Turnos restantes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lottery-lack"></div>
+    <div id="player1-card" class="container">
+      <div class="actions">
+        <button class="icon-button back-button1" aria-label="regresar">
+          <svg width="24" height="24" viewBox="0 0 19 19">
+            <path
+              d="M18.271,9.212H3.615l4.184-4.184c0.306-0.306,0.306-0.801,0-1.107c-0.306-0.306-0.801-0.306-1.107,0
+              L1.21,9.403C1.194,9.417,1.174,9.421,1.158,9.437c-0.181,0.181-0.242,0.425-0.209,0.66c0.005,0.038,0.012,0.071,0.022,0.109
+              c0.028,0.098,0.075,0.188,0.142,0.271c0.021,0.026,0.021,0.061,0.045,0.085c0.015,0.016,0.034,0.02,0.05,0.033l5.484,5.483
+              c0.306,0.307,0.801,0.307,1.107,0c0.306-0.305,0.306-0.801,0-1.105l-4.184-4.185h14.656c0.436,0,0.788-0.353,0.788-0.788
+              S18.707,9.212,18.271,9.212z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div class="content-top">
+        <div id="grid1" class="grid-container"></div>
+      </div>
+      <div class="content-bottom">
+        <div class="titlep">Puntuación</div>
+        <div id="score1" class="pointsp">0</div>
+      </div>
+      <div id="puntos1" class="score">
+        <div class="points">Líneas horizontales</div>
+        <div class="points">Líneas verticales</div>
+        <div class="points">Líneas diagonales</div>
+        <div id="rows1" class="points">0</div>
+        <div id="columns1" class="points">0</div>
+        <div id="diagonals1" class="points">0</div>
+      </div>
+      <div>
+        <div class="subtitles">Números que han salido:</div>
+        <div id="drawnNumbers1" class="drawn-numbers-container"></div>
+      </div>
+    </div>
+    <div id="player2-card" class="container">
+      <div class="actions">
+        <button class="icon-button back-button1" aria-label="regresar">
+          <svg width="24" height="24" viewBox="0 0 19 19">
+            <path
+              d="M18.271,9.212H3.615l4.184-4.184c0.306-0.306,0.306-0.801,0-1.107c-0.306-0.306-0.801-0.306-1.107,0
+              L1.21,9.403C1.194,9.417,1.174,9.421,1.158,9.437c-0.181,0.181-0.242,0.425-0.209,0.66c0.005,0.038,0.012,0.071,0.022,0.109
+              c0.028,0.098,0.075,0.188,0.142,0.271c0.021,0.026,0.021,0.061,0.045,0.085c0.015,0.016,0.034,0.02,0.05,0.033l5.484,5.483
+              c0.306,0.307,0.801,0.307,1.107,0c0.306-0.305,0.306-0.801,0-1.105l-4.184-4.185h14.656c0.436,0,0.788-0.353,0.788-0.788
+              S18.707,9.212,18.271,9.212z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div class="content-top">
+        <div id="grid2" class="grid-container"></div>
+      </div>
+      <div class="content-bottom">
+        <div class="titlep">Puntuación</div>
+        <div id="score2" class="pointsp">0</div>
+      </div>
+      <div id="puntos2" class="score">
+        <div class="points">Líneas horizontales</div>
+        <div class="points">Líneas verticales</div>
+        <div class="points">Líneas diagonales</div>
+        <div id="rows2" class="points">0</div>
+        <div id="columns2" class="points">0</div>
+        <div id="diagonals2" class="points">0</div>
+      </div>
+      <div>
+        <div class="subtitles">Números que han salido:</div>
+        <div id="drawnNumbers2" class="drawn-numbers-container"></div>
+      </div>
+    </div>
+    <div id="player3-card" class="container">
+      <div class="actions">
+        <button class="icon-button back-button1" aria-label="regresar">
+          <svg width="24" height="24" viewBox="0 0 19 19">
+            <path
+              d="M18.271,9.212H3.615l4.184-4.184c0.306-0.306,0.306-0.801,0-1.107c-0.306-0.306-0.801-0.306-1.107,0
+              L1.21,9.403C1.194,9.417,1.174,9.421,1.158,9.437c-0.181,0.181-0.242,0.425-0.209,0.66c0.005,0.038,0.012,0.071,0.022,0.109
+              c0.028,0.098,0.075,0.188,0.142,0.271c0.021,0.026,0.021,0.061,0.045,0.085c0.015,0.016,0.034,0.02,0.05,0.033l5.484,5.483
+              c0.306,0.307,0.801,0.307,1.107,0c0.306-0.305,0.306-0.801,0-1.105l-4.184-4.185h14.656c0.436,0,0.788-0.353,0.788-0.788
+              S18.707,9.212,18.271,9.212z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div class="content-top">
+        <div id="grid3" class="grid-container"></div>
+      </div>
+      <div class="content-bottom">
+        <div class="titlep">Puntuación</div>
+        <div id="score3" class="pointsp">0</div>
+      </div>
+      <div id="puntos3" class="score">
+        <div class="points">Líneas horizontales</div>
+        <div class="points">Líneas verticales</div>
+        <div class="points">Líneas diagonales</div>
+        <div id="rows3" class="points">0</div>
+        <div id="columns3" class="points">0</div>
+        <div id="diagonals3" class="points">0</div>
+      </div>
+      <div>
+        <div class="subtitles">Números que han salido:</div>
+        <div id="drawnNumbers3" class="drawn-numbers-container"></div>
+      </div>
+    </div>
+    <div id="player4-card" class="container">
+      <div class="actions">
+        <button class="icon-button back-button1" aria-label="regresar">
+          <svg width="24" height="24" viewBox="0 0 19 19">
+            <path
+              d="M18.271,9.212H3.615l4.184-4.184c0.306-0.306,0.306-0.801,0-1.107c-0.306-0.306-0.801-0.306-1.107,0
+              L1.21,9.403C1.194,9.417,1.174,9.421,1.158,9.437c-0.181,0.181-0.242,0.425-0.209,0.66c0.005,0.038,0.012,0.071,0.022,0.109
+              c0.028,0.098,0.075,0.188,0.142,0.271c0.021,0.026,0.021,0.061,0.045,0.085c0.015,0.016,0.034,0.02,0.05,0.033l5.484,5.483
+              c0.306,0.307,0.801,0.307,1.107,0c0.306-0.305,0.306-0.801,0-1.105l-4.184-4.185h14.656c0.436,0,0.788-0.353,0.788-0.788
+              S18.707,9.212,18.271,9.212z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div class="content-top">
+        <div id="grid4" class="grid-container"></div>
+      </div>
+      <div class="content-bottom">
+        <div class="titlep">Puntuación</div>
+        <div id="score4" class="pointsp">0</div>
+      </div>
+      <div id="puntos4" class="score">
+        <div class="points">Líneas horizontales</div>
+        <div class="points">Líneas verticales</div>
+        <div class="points">Líneas diagonales</div>
+        <div id="rows4" class="points">0</div>
+        <div id="columns4" class="points">0</div>
+        <div id="diagonals4" class="points">0</div>
+      </div>
+      <div>
+        <div class="subtitles">Números que han salido:</div>
+        <div id="drawnNumbers4" class="drawn-numbers-container"></div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
